@@ -96,7 +96,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -106,8 +106,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: bb7314016766975438c99817dcfaf567, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: bb7314016766975438c99817dcfaf567, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -242,6 +242,8 @@ GameObject:
   - component: {fileID: 856856701336972464}
   - component: {fileID: 5557718517310957198}
   - component: {fileID: 825743334526132994}
+  - component: {fileID: 701283281}
+  - component: {fileID: 701283282}
   m_Layer: 5
   m_Name: Crosshair
   m_TagString: Untagged
@@ -267,7 +269,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 172.0096, y: 172.0096}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5557718517310957198
 CanvasRenderer:
@@ -307,6 +309,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &701283281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352583128780394071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10f2f2de744b444cabc8caf4b082c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CrosshairState:
+    m_Image: {fileID: 825743334526132994}
+    m_NormalState: {fileID: 21300000, guid: e398a7f2ef3ce8740a016798774536a8, type: 3}
+    m_FocusState: {fileID: 21300000, guid: adee74de070692b44bbdded7efedd40d, type: 3}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_FocusColor: {r: 0.048704147, g: 1, b: 0, a: 1}
+--- !u!114 &701283282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4352583128780394071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: 2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6751388636123340836
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +356,7 @@ GameObject:
   - component: {fileID: 1557486221260924829}
   - component: {fileID: 1663187150}
   - component: {fileID: 8890774966862588244}
+  - component: {fileID: 376259627}
   m_Layer: 5
   m_Name: UI_Canvas_StarterAssetsInputs_Joysticks
   m_TagString: Untagged
@@ -443,6 +479,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
+--- !u!114 &376259627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751388636123340836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8c4931fa2a3bb4db047f1652b7a27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Crosshair: {fileID: 0}
 --- !u!1001 &166868853765351469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -830,12 +879,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cacf0ef5f1c4e4c943d74a6990111b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JoystickBase: {fileID: 8934069601105397968}
-  m_JoystickHandle: {fileID: 9139165769254981991}
-  m_JoystickBaseUpState: {fileID: 21300000, guid: befe0c3b9e1fa3444aaba6f49ef9e5cb, type: 3}
-  m_JoystickBaseDownState: {fileID: 21300000, guid: dc8db5b880c1e914fba7cebe066436b5, type: 3}
-  m_JoystickHandleDownState: {fileID: 21300000, guid: 176c3953d8d8f1c4bb0bf672179cc680, type: 3}
-  m_JoystickHandleUpState: {fileID: 21300000, guid: 741b0fd53df95b340bf7ab34482c6fe3, type: 3}
+  m_WidgetWithStates:
+    m_Image: {fileID: 8934069601105397968}
+    m_NormalState: {fileID: 21300000, guid: befe0c3b9e1fa3444aaba6f49ef9e5cb, type: 3}
+    m_FocusState: {fileID: 21300000, guid: dc8db5b880c1e914fba7cebe066436b5, type: 3}
+  m_ExtraWidgetWithStates:
+  - m_Image: {fileID: 9139165769254981991}
+    m_NormalState: {fileID: 21300000, guid: 741b0fd53df95b340bf7ab34482c6fe3, type: 3}
+    m_FocusState: {fileID: 21300000, guid: 176c3953d8d8f1c4bb0bf672179cc680, type: 3}
 --- !u!114 &8934069601105397968 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2976711156707159110, guid: 6eb08bfc0fd869c47b796c42ada099da, type: 3}
@@ -1047,11 +1098,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb08bfc0fd869c47b796c42ada099da, type: 3}
+--- !u!114 &5474300109252862289 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2976711156707159110, guid: 6eb08bfc0fd869c47b796c42ada099da, type: 3}
+  m_PrefabInstance: {fileID: 7113428977512795415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176038822839415544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5679172028527851750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3199668076469712369, guid: 6eb08bfc0fd869c47b796c42ada099da, type: 3}
+  m_PrefabInstance: {fileID: 7113428977512795415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8160084292953347161 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1407806550736918862, guid: 6eb08bfc0fd869c47b796c42ada099da, type: 3}
   m_PrefabInstance: {fileID: 7113428977512795415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8176038822839415544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423390416140222447, guid: 6eb08bfc0fd869c47b796c42ada099da, type: 3}
+  m_PrefabInstance: {fileID: 7113428977512795415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6640728985069188187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176038822839415544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3cacf0ef5f1c4e4c943d74a6990111b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WidgetWithStates:
+    m_Image: {fileID: 5474300109252862289}
+    m_NormalState: {fileID: 21300000, guid: befe0c3b9e1fa3444aaba6f49ef9e5cb, type: 3}
+    m_FocusState: {fileID: 21300000, guid: 176c3953d8d8f1c4bb0bf672179cc680, type: 3}
+  m_ExtraWidgetWithStates:
+  - m_Image: {fileID: 5679172028527851750}
+    m_NormalState: {fileID: 21300000, guid: a0e231572577b3049a38bea06ce7ea89, type: 3}
+    m_FocusState: {fileID: 21300000, guid: 36f5ff2f1db31dc4fb801e873f2ec6d4, type: 3}
 --- !u!1001 &8690618095626166063
 PrefabInstance:
   m_ObjectHideFlags: 0
