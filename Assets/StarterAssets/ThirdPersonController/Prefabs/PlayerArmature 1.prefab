@@ -211,7 +211,7 @@ MonoBehaviour:
   FallTimeout: 0.15
   Grounded: 1
   GroundedOffset: -0.14
-  m_CameraSpeed: 50
+  m_CameraSpeed: 35
   m_CameraSlerpSpeed: 100
   GroundedRadius: 0.28
   GroundLayers:

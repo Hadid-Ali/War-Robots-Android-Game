@@ -50,7 +50,6 @@ namespace StarterAssets
         public float GroundedOffset = -0.14f;
 
         [SerializeField] private float m_CameraSpeed = 45f;
-        [SerializeField] private float m_CameraSlerpSpeed = 15f;
         [Tooltip("The radius of the grounded check. Should match the radius of the CharacterController")]
         public float GroundedRadius = 0.28f;
 

@@ -106,8 +106,8 @@ namespace CnControls
 
             if (PreserveInertia && !_isCurrentlyTweaking)
             {
-                _horizintalAxis.Value = Mathf.Lerp(_horizintalAxis.Value, 0f, Friction * Time.deltaTime);
-                _verticalAxis.Value = Mathf.Lerp(_verticalAxis.Value, 0f, Friction * Time.deltaTime);
+                _horizintalAxis.Value = Mathf.MoveTowards(_horizintalAxis.Value, 0f, Friction * Time.deltaTime);
+                _verticalAxis.Value = Mathf.MoveTowards(_verticalAxis.Value, 0f, Friction * Time.deltaTime);
             }
         }
     }
