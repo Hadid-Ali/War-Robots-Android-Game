@@ -212,7 +212,6 @@ MonoBehaviour:
   Grounded: 1
   GroundedOffset: -0.14
   m_CameraSpeed: 35
-  m_CameraSlerpSpeed: 100
   GroundedRadius: 0.28
   GroundLayers:
     serializedVersion: 2
@@ -508,7 +507,7 @@ MonoBehaviour:
   m_WeaponParticles:
   - {fileID: 1348297925030133119}
   - {fileID: 1348297924396908042}
-  m_WeaponShootingRate: 0.2
+  m_WeaponShootingRate: 0.1
   m_WeaponSfxHandler: {fileID: 3027864291175348313}
   m_WeaponVFXHandler: {fileID: 2648377406136026210}
 --- !u!114 &2648377406136026210

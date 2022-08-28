@@ -9,14 +9,6 @@ public class PlayerWeaponsManager : MonoBehaviour
    [SerializeField] private BaseWeapon m_CurrentPrimaryWeapon;
    [SerializeField] private BaseWeapon m_CurrentSecondaryWeapon;
 
-   private PlayerController m_PlayerController;
-
-
-   private void Start()
-   {
-      m_PlayerController = GetComponent<PlayerController>();
-   }
-
    private void OnEnable()
    {
       InputManager.OnPrimaryWeaponDown += FirePrimaryWeapon;
@@ -26,9 +18,15 @@ public class PlayerWeaponsManager : MonoBehaviour
       InputManager.OnSecondaryWeaponUp += ReleaseSecondaryWeapon;
    }
 
+   public void UpdateWeaponAimObject(AimObject aimObject)
+   {
+      m_CurrentPrimaryWeapon.RegisterAimObject(aimObject);
+      m_CurrentSecondaryWeapon.RegisterAimObject(aimObject);
+   }
+   
    private void FirePrimaryWeapon()
    {
-      m_CurrentPrimaryWeapon.OnFireDown(m_PlayerController.AimingComponent.CurrentAimObject);
+      m_CurrentPrimaryWeapon.OnFireDown();
    }
 
    private void ReleaseFirePrimaryWeapon()
@@ -38,7 +36,7 @@ public class PlayerWeaponsManager : MonoBehaviour
 
    private void FireSecondaryWeapon()
    {
-      m_CurrentSecondaryWeapon.OnFireDown(m_PlayerController.AimingComponent.CurrentAimObject);
+      m_CurrentSecondaryWeapon.OnFireDown();
    }  
    
    private void ReleaseSecondaryWeapon()

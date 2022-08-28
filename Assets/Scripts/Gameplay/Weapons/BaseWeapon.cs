@@ -13,6 +13,8 @@ namespace Gameplay.Weapons
         [SerializeField] private float m_WeaponShootingRate = 0.2f;
         [SerializeField] private WeaponSFXHandler m_WeaponSfxHandler;
         
+        
+        
         private int m_CurrentAmmoCount;
         private int m_CurrentCoolDownRemainingTime;
     
@@ -25,15 +27,18 @@ namespace Gameplay.Weapons
         protected AimObject m_CurrentAimObject;
         private WaitForSeconds m_WeaponCooldownRoutineWait = new WaitForSeconds(1f);
 
-    
         private void Start()
         {
         
         }
 
-        public void OnFireDown(AimObject aimObject)
+        public void RegisterAimObject(AimObject aimObject)
         {
             m_CurrentAimObject = aimObject;
+        }
+        
+        public void OnFireDown()
+        {
             m_Fire = true;
         }
 

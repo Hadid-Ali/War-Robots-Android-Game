@@ -1137,6 +1137,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &767483602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176038822839415544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aa632517b93b5438ffbbbdfe98661d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalAxisName: CamX
+  VerticalAxisName: CamY
+  PreserveInertia: 0
+  Friction: 0.01
+  offsetDrag: 7
+  ControlMoveAxis: 3
 --- !u!114 &6640728985069188187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,24 +1175,6 @@ MonoBehaviour:
   - m_Image: {fileID: 5679172028527851750}
     m_NormalState: {fileID: 21300000, guid: a0e231572577b3049a38bea06ce7ea89, type: 3}
     m_FocusState: {fileID: 21300000, guid: 36f5ff2f1db31dc4fb801e873f2ec6d4, type: 3}
---- !u!114 &767483602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8176038822839415544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15aa632517b93b5438ffbbbdfe98661d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HorizontalAxisName: CamX
-  VerticalAxisName: CamY
-  PreserveInertia: 0
-  Friction: 0.01
-  offsetDrag: 7
-  ControlMoveAxis: 3
 --- !u!1001 &8690618095626166063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11435220, guid: 844d770c99f6cf24da670a158eaf4fe1, type: 3}
       propertyPath: offsetDrag
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 11435220, guid: 844d770c99f6cf24da670a158eaf4fe1, type: 3}
       propertyPath: PreserveInertia
