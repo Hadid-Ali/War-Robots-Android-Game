@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-   public class WidgetUIStates : MonoBehaviour,IPointerDownHandler,IPointerUpHandler,IPointerEnterHandler
+   public class WidgetUIStates : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
    {
       [SerializeField] private WidgetWithStates m_WidgetWithStates;
 
@@ -15,11 +15,6 @@ namespace UI
       void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
       {
          UnFocusWidget();
-      }
-
-      void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
-      {
-         FocusWidget();
       }
 
       public virtual void FocusWidget()

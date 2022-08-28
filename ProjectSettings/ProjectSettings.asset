@@ -272,7 +272,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 2af263541040b404ea09b174b1af7a49, type: 3}
+      m_Icon: {fileID: 2800000, guid: 04dcdc8ffb4fcf3489404dc4e94ce78a, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -897,7 +897,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 1
+  activeInputHandler: 0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

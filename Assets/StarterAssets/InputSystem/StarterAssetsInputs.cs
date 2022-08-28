@@ -1,14 +1,15 @@
+using CnControls;
 using UnityEngine;
 
 namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
-		[Header("Character Input Values")]
-		public Vector2 move;
-		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+
+		public Vector2 MoveInput => new Vector2(CnInputManager.GetAxis("Horizontal"),CnInputManager.GetAxis("Vertical"));
+		public Vector2 LookInput => new Vector2(CnInputManager.GetAxis("CamX"),CnInputManager.GetAxis("CamY"));
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -16,16 +17,6 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-
-		public void MoveInput(Vector2 newMoveDirection)
-		{
-			move = newMoveDirection;
-		} 
-
-		public void LookInput(Vector2 newLookDirection)
-		{
-			look = newLookDirection;
-		}
 
 		public void JumpInput(bool newJumpState)
 		{
