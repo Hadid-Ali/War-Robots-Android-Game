@@ -11,7 +11,7 @@ public class WeaponAimingComponent : MonoBehaviour
     [SerializeField] private bool m_CanAim = true;
 
     [SerializeField] private LayerMask m_AimLayerMask;
-    
+
     private void Update()
     {
         if (!m_CanAim)

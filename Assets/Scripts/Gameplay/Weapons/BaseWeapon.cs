@@ -8,25 +8,28 @@ public abstract class BaseWeapon : MonoBehaviour
     [SerializeField] protected int m_MagazineSize;
     [SerializeField] protected int m_WeaponCoolDownDuration;
 
-    private ParticleSystem[] weaponParticles;
+    [SerializeField] private ParticleSystem[] m_WeaponParticles;
+    [SerializeField] private float m_WeaponShootingRate = 0.2f;
     
     private int m_CurrentAmmoCount;
     private int m_CurrentCoolDownRemainingTime;
-
+    
     public Action<int> OnWeaponRemainingCoolDownUpdate;
     public Action<int> OnWeaponAmmoCountUpdate;
 
     private WaitForSeconds m_WeaponCooldownRoutineWait = new WaitForSeconds(1f);
 
+    public float WeaponShootingRate => m_WeaponShootingRate;
+    
     private void Start()
     {
     }
 
     public virtual void Fire()
     {
-        for (int i = 0; i < weaponParticles.Length; i++)
+        for (int i = 0; i < m_WeaponParticles.Length; i++)
         {
-            weaponParticles[i].Play(true);
+            m_WeaponParticles[i].Play(true);
         }
         
         m_CurrentAmmoCount--;
