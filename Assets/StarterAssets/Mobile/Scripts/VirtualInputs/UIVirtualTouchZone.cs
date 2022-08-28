@@ -39,7 +39,6 @@ public class UIVirtualTouchZone : MonoBehaviour, IPointerDownHandler, IDragHandl
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
         RectTransformUtility.ScreenPointToLocalPointInRectangle(containerRect, eventData.position, eventData.pressEventCamera, out pointerDownPosition);
 
         if(handleRect)
@@ -51,13 +50,13 @@ public class UIVirtualTouchZone : MonoBehaviour, IPointerDownHandler, IDragHandl
 
     public void OnDrag(PointerEventData eventData)
     {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(containerRect, eventData.position,
+            eventData.pressEventCamera, out currentPointerPosition);
 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(containerRect, eventData.position, eventData.pressEventCamera, out currentPointerPosition);
-        
         Vector2 positionDelta = GetDeltaBetweenPositions(pointerDownPosition, currentPointerPosition);
 
         Vector2 clampedPosition = ClampValuesToMagnitude(positionDelta);
-        
+
         Vector2 outputPosition = ApplyInversionFilter(clampedPosition);
 
         OutputPointerEventValue(outputPosition * magnitudeMultiplier);
@@ -79,6 +78,7 @@ public class UIVirtualTouchZone : MonoBehaviour, IPointerDownHandler, IDragHandl
 
     void OutputPointerEventValue(Vector2 pointerPosition)
     {
+        Debug.LogError($"Outoput Value {pointerPosition.magnitude}");
         touchZoneOutputEvent.Invoke(pointerPosition);
     }
 
