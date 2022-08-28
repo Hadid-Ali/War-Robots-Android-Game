@@ -14,18 +14,50 @@ public abstract class BaseWeapon : MonoBehaviour
     private int m_CurrentAmmoCount;
     private int m_CurrentCoolDownRemainingTime;
     
+    private float m_CurrentShotTime;
+    private bool m_Fire = false;
+
     public Action<int> OnWeaponRemainingCoolDownUpdate;
     public Action<int> OnWeaponAmmoCountUpdate;
 
     private WaitForSeconds m_WeaponCooldownRoutineWait = new WaitForSeconds(1f);
 
     public float WeaponShootingRate => m_WeaponShootingRate;
+
     
     private void Start()
     {
+        
     }
 
-    public virtual void Fire()
+    public void OnFireDown()
+    {
+        m_Fire = true;
+    }
+
+    public void OnFireUp()
+    {
+        m_Fire = false;
+    }
+    
+    private void Update()
+    {
+        if(!m_Fire)
+            return;
+        
+        Fire();
+    }
+
+    private void Fire()
+    {
+        if (Time.time > m_CurrentShotTime)
+        {
+            m_CurrentShotTime = m_WeaponShootingRate + Time.time;
+            FireInternal();
+        }
+    }
+    
+    protected virtual void FireInternal()
     {
         for (int i = 0; i < m_WeaponParticles.Length; i++)
         {
