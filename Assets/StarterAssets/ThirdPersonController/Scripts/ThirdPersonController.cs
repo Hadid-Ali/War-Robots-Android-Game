@@ -130,11 +130,6 @@ namespace StarterAssets
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-#else
-			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
-#endif
-
             AssignAnimationIDs();
 
             // reset our timeouts on start
@@ -204,7 +199,7 @@ namespace StarterAssets
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed = InputManager.IsSprinting? SprintSpeed : MoveSpeed;
             Vector2 moveInput = _input.MoveInput;
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 

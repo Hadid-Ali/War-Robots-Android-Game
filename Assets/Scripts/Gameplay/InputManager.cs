@@ -11,6 +11,18 @@ public class InputManager : MonoBehaviour
    public static Action OnPrimaryWeaponUp;
    public static Action OnSecondaryWeaponUp;
 
+   public static bool IsSprinting = false;
+
+   public void StartSprint()
+   {
+      IsSprinting = true;
+   }
+
+   public void ReleaseSprint()
+   {
+      IsSprinting = false;
+   }
+   
    public void PrimaryWeaponFire()
    {
       OnPrimaryWeaponDown?.Invoke();
