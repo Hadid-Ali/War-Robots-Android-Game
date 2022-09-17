@@ -55,7 +55,7 @@ namespace Gameplay.Weapons
             Fire();
         }
 
-        private void Fire()
+        public void Fire()
         {
             if (Time.time > m_CurrentShotTime)
             {
