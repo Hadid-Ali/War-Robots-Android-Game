@@ -1,0 +1,2 @@
+Assets/Animation/Mecha filter=lfs diff=lfs merge=lfs -text
+Assets/Animation/Mecha/*.fbx filter=lfs diff=lfs merge=lfs -text
