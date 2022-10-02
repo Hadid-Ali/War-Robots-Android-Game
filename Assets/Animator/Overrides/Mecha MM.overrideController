@@ -6,10 +6,10 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mecha HM4
+  m_Name: Mecha MM
   m_Controller: {fileID: 9100000, guid: 64bef2bb1ee828943ba14fa84e7cfaa0, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400026, guid: b0c68e6eb763a604694ce6e49557bfb4, type: 3}
-    m_OverrideClip: {fileID: -1498010087492872569, guid: 2b809b9575398b2499ecf9750f89592b, type: 3}
+    m_OverrideClip: {fileID: -1498010087492872569, guid: 2efa4f62e09948641ac239ed675d965a, type: 3}
   - m_OriginalClip: {fileID: 7400006, guid: b0c68e6eb763a604694ce6e49557bfb4, type: 3}
-    m_OverrideClip: {fileID: -1498010087492872569, guid: a10a716da29503849832daa7f76e55be, type: 3}
+    m_OverrideClip: {fileID: -1498010087492872569, guid: 1a2b98dd48ab8ac4fa8e1ff5fe6469e0, type: 3}
