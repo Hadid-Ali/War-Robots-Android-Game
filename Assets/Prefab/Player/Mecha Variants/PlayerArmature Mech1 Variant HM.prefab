@@ -12,8 +12,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5714071663626545424, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
+      propertyPath: m_AimingOffset.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714071663626545424, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_AimingPointTransform
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714071663626545424, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
+      propertyPath: m_AimingBonePositionOffset.x
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714071663626545424, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
+      propertyPath: m_AimingBonePositionOffset.y
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5714071663626545424, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
+      propertyPath: m_AimingBonePositionOffset.z
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 5714071664089385301, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_Data.m_SourceObjects.m_Item0.transform
@@ -21,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8214679217789047037, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_Name
-      value: PlayerArmature Mech1
+      value: PlayerArmature Mech1 Variant HM
       objectReference: {fileID: 0}
     - target: {fileID: 8740281353136360007, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_RootOrder
