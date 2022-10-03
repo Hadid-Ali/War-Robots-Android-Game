@@ -708,14 +708,14 @@ GameObject:
   - component: {fileID: 2580539606873353747}
   - component: {fileID: 8444187510195549289}
   - component: {fileID: 5033694810203227507}
+  - component: {fileID: 1569550013397142852}
+  - component: {fileID: 1569550013084949476}
+  - component: {fileID: 1569550013084949477}
   - component: {fileID: 2919524108061602979}
   - component: {fileID: 2919524108061602978}
   - component: {fileID: 4928157272179777113}
   - component: {fileID: 1453084442173483221}
   - component: {fileID: 1569550011828264008}
-  - component: {fileID: 1569550013397142852}
-  - component: {fileID: 1569550013084949476}
-  - component: {fileID: 1569550013084949477}
   m_Layer: 0
   m_Name: PlayerArmature Mech1
   m_TagString: Player
@@ -777,6 +777,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerWeaponsManager: {fileID: 1569550013084949477}
   m_AimingComponent: {fileID: 1569550013084949476}
+  m_AnimatorController: {fileID: 0}
+--- !u!114 &1569550013397142852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919524108061602985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e000ef0153db87643b22445d8a5a7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformAimingBone: {fileID: 6740573607935122280}
+  m_AimingPointTransform: {fileID: 0}
+  m_X: 0
+  m_Y: 1
+  m_Z: 0
+--- !u!114 &1569550013084949476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919524108061602985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53297603ad0f4ed47821d02b93913c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Crosshair: {fileID: 0}
+  m_CanAim: 1
+  m_AimLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &1569550013084949477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919524108061602985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24bd2ba884fc11f4eaf5587aa948c03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CurrentPrimaryWeapon: {fileID: 8268899865891582561}
+  m_CurrentSecondaryWeapon: {fileID: 1569550013242231451}
 --- !u!143 &2919524108061602979
 CharacterController:
   m_ObjectHideFlags: 0
@@ -909,54 +958,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!114 &1569550013397142852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2919524108061602985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e000ef0153db87643b22445d8a5a7c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformAimingBone: {fileID: 6740573607935122280}
-  m_AimingPointTransform: {fileID: 0}
-  m_X: 0
-  m_Y: 1
-  m_Z: 0
---- !u!114 &1569550013084949476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2919524108061602985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53297603ad0f4ed47821d02b93913c33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Crosshair: {fileID: 0}
-  m_CanAim: 1
-  m_AimLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &1569550013084949477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2919524108061602985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24bd2ba884fc11f4eaf5587aa948c03c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_CurrentPrimaryWeapon: {fileID: 8268899865891582561}
-  m_CurrentSecondaryWeapon: {fileID: 1569550013242231451}
 --- !u!1 &2953452619816692332
 GameObject:
   m_ObjectHideFlags: 0

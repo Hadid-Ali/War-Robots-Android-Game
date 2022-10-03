@@ -34,7 +34,7 @@ public class WeaponAimingComponent : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!m_CanAim)
+        if (!m_CanAim || m_Crosshair is null)
             return;
 
         Aim();

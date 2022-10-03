@@ -113,6 +113,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 874cc64da7d82404cb9a92b60ce3b9be, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2b98dd48ab8ac4fa8e1ff5fe6469e0, type: 3}
+--- !u!4 &3959040581144378927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5264331456321636990, guid: 1a2b98dd48ab8ac4fa8e1ff5fe6469e0, type: 3}
+  m_PrefabInstance: {fileID: 1551879085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3102985481860505721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,6 +165,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 91.315
       objectReference: {fileID: 0}
+    - target: {fileID: 1569550013397142852, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
+      propertyPath: m_AimingOffset.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569550013397142852, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
+      propertyPath: m_AimingOffset.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569550013397142852, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
+      propertyPath: m_TransformAimingBone
+      value: 
+      objectReference: {fileID: 3959040581144378927}
     - target: {fileID: 1804044295139249157, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -324,7 +341,12 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 4093d507797154e4fb2b7cfe17f2b1e8, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 8444187510195549289, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1569550011828264008, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
 --- !u!4 &639493294417399402 stripped
 Transform:
