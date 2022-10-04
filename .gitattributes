@@ -4,3 +4,5 @@ Assets/Animation/Mecha/HW4/*.fbx filter=lfs diff=lfs merge=lfs -text
 Assets/Animation/Mecha/lm/*.fbx filter=lfs diff=lfs merge=lfs -text
 Assets/Animation/Mecha/mm3/*.fbx filter=lfs diff=lfs merge=lfs -text
 Assets/Animation/Mecha/Im/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Animations/Mecha/Im/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/Animations/Mecha/*/*.fbx filter=lfs diff=lfs merge=lfs -text
