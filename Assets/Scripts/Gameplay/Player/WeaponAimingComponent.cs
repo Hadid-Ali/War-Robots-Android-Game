@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UI;
 using UnityEngine;
 
+[System.Serializable]
 public class AimObject
 {
     public GameObject UnderAimObject { get; set; }

@@ -1082,7 +1082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5641928273475423248}
   - component: {fileID: 5641928273475423249}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: Detection Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1357,8 +1357,10 @@ GameObject:
   - component: {fileID: 4273134144849875147}
   - component: {fileID: 4273134144849875146}
   - component: {fileID: 4273134144849875145}
-  - component: {fileID: 4273134144849875191}
   - component: {fileID: 4273134144849875184}
+  - component: {fileID: 8725436624993107900}
+  - component: {fileID: 7902994953031435635}
+  - component: {fileID: 7902994953031435636}
   m_Layer: 6
   m_Name: Character4
   m_TagString: Untagged
@@ -1491,10 +1493,36 @@ MonoBehaviour:
   m_LookPoint: {fileID: 5641928272759651663}
   m_VisionMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 387
   m_VisionRange: 100
   m_VisionOffset: {x: 0, y: 0.5, z: 0}
---- !u!54 &4273134144849875191
+--- !u!114 &4273134144849875184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414830050577682440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2109a6dc1d43394f8e1054dc907e22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &8725436624993107900
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414830050577682440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.41
+  m_Height: 2.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.12, z: 0}
+--- !u!54 &7902994953031435635
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1508,9 +1536,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &4273134144849875184
+--- !u!114 &7902994953031435636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1519,9 +1547,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7414830050577682440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2109a6dc1d43394f8e1054dc907e22c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fc5b1a5a74b8314882f37c4cc20101d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Health: 100
 --- !u!1 &7416314001572036228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,6 +2265,7 @@ MonoBehaviour:
   - {fileID: 6099175426689520637}
   m_WeaponShootingRate: 0.2
   m_WeaponSfxHandler: {fileID: 492268942506867192}
+  m_WeaponDamage: 20
 --- !u!1001 &6099175426550433673
 PrefabInstance:
   m_ObjectHideFlags: 0

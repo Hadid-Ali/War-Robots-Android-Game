@@ -6688,6 +6688,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 91.315
       objectReference: {fileID: 0}
+    - target: {fileID: 1569550013084949476, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
+      propertyPath: m_AimLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1569550013397142852, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
       propertyPath: m_AimingOffset.x
       value: -10

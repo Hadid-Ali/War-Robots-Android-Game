@@ -1,0 +1,46 @@
+using System;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class HealthController : MonoBehaviour
+{
+    [SerializeField] private float m_Health = 100;
+
+    private float m_CurrentHealth;
+    
+    private Action m_HealthDeminished;
+    private Action<float> m_HealthUpdate;
+
+    private void OnEnable()
+    {
+        m_CurrentHealth = m_Health;
+    }
+
+    public void Initialize(Action OnHealthDiminished, Action<float> OnHealthUpdate)
+    {
+        m_HealthUpdate = OnHealthUpdate;
+        m_HealthDeminished = OnHealthDiminished;
+    }
+
+    private void OnDisable()
+    {
+        m_HealthDeminished = null;
+        m_HealthUpdate = null;
+    }
+
+    public virtual void ApplyDamage(float damage)
+    {
+        m_CurrentHealth -= damage;
+        m_HealthUpdate?.Invoke(m_CurrentHealth);
+        
+        if(m_CurrentHealth > 0)
+            return;
+        
+        OnHealthDiminish();
+    }
+
+    protected virtual void OnHealthDiminish()
+    {
+        m_HealthDeminished?.Invoke();
+    }
+}

@@ -6,9 +6,11 @@ using UnityEngine;
 
 public class PlayerWeaponsManager : MonoBehaviour
 {
-   [SerializeField] private BaseWeapon m_CurrentPrimaryWeapon;
+   [SerializeField] private SimpleWeapon m_CurrentPrimaryWeapon;
    [SerializeField] private BaseWeapon m_CurrentSecondaryWeapon;
 
+   private AimObject m_AimObject;
+   
    private void OnEnable()
    {
       InputManager.OnPrimaryWeaponDown += FirePrimaryWeapon;
@@ -16,12 +18,26 @@ public class PlayerWeaponsManager : MonoBehaviour
 
       InputManager.OnPrimaryWeaponUp += ReleaseFirePrimaryWeapon;
       InputManager.OnSecondaryWeaponUp += ReleaseSecondaryWeapon;
+      
+      m_CurrentPrimaryWeapon.Initialize(TryWeaponDamage);
    }
 
    public void UpdateWeaponAimObject(AimObject aimObject)
    {
+      m_AimObject = aimObject;
       m_CurrentPrimaryWeapon.RegisterAimObject(aimObject);
       m_CurrentSecondaryWeapon.RegisterAimObject(aimObject);
+   }
+
+   private void TryWeaponDamage(float damage)
+   {
+      if(m_AimObject is null)
+         return;
+
+      if (m_AimObject.UnderAimObject.TryGetComponent(out HealthController healthController))
+      {
+         healthController.ApplyDamage(damage);
+      }
    }
    
    private void FirePrimaryWeapon()

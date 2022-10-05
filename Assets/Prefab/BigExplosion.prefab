@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5893805934104826340}
   - component: {fileID: 5894239540927597942}
   - component: {fileID: -2460050638663108320}
+  - component: {fileID: 4817491022589855231}
+  - component: {fileID: 3198733442302385244}
   m_Layer: 0
   m_Name: BigExplosion
   m_TagString: Untagged
@@ -26,9 +28,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5983677555660271254}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2953.1372, y: 156.8291, z: 253.20789}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5987882061204552144}
@@ -5017,6 +5019,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &4817491022589855231
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983677555660271254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3198733442302385244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983677555660271254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ed550640ec3414192be7909f9ef802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  m_ImpactRadius: 5
+  m_Damage: 25
 --- !u!1 &5983680219228678604
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class BotsWithWeapon : NavigationAgent
    {
       base.Init();
       
+      m_EnemyWeapon.Initialize(ApplyDamageWithWeapon);
       m_EnemyWeapon.SetWeaponShootingRate(m_BotAttackRate);
       m_AnimatorController.SetHasWeapon(true);
    }
@@ -20,6 +21,17 @@ public class BotsWithWeapon : NavigationAgent
    {
       base.AttackState();
       m_AnimatorController.ShootWeapon(m_EnemyWeapon.Fire);
+   }
+
+   private void ApplyDamageWithWeapon(float damage)
+   {
+      if(m_Target is null || !m_BotLook.CheckUnderView(m_Target))
+         return;
+      
+      if (m_Target.TryGetComponent(out HealthController healthController))
+      {
+         healthController.ApplyDamage(damage);
+      }
    }
 
    protected override void OnSwitchToAttack()

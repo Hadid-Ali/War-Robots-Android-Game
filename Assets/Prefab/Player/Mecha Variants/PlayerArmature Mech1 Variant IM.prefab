@@ -6321,6 +6321,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.845
       objectReference: {fileID: 0}
+    - target: {fileID: 1569550013084949476, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
+      propertyPath: m_AimLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1569550013397142852, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
       propertyPath: m_AimingOffset.y
       value: 55
@@ -6495,15 +6499,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2580539606873353747, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2950.1414
+      value: 2953.2302
       objectReference: {fileID: 0}
     - target: {fileID: 2580539606873353747, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 156.3798
+      value: 156.745
       objectReference: {fileID: 0}
     - target: {fileID: 2580539606873353747, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 243.35045
+      value: 247.60915
       objectReference: {fileID: 0}
     - target: {fileID: 2580539606873353747, guid: 008869c1db7e0fe42adc27066834cc25, type: 3}
       propertyPath: m_LocalRotation.w

@@ -17,12 +17,12 @@ public class NavigationAgent : MonoBehaviour
 
     [SerializeField] private NavigationAgentMovement m_NavigationAgentMovement;
     [SerializeField] protected BotAnimatorController m_AnimatorController;
-    [SerializeField] private BotLook m_BotLook;
+    [SerializeField] protected BotLook m_BotLook;
     [SerializeField] private BotTriggerController m_BotTriggerController;
     [SerializeField] private Transform m_Transform;
     
-     private Transform m_Target;
-     private PlayerController m_PlayerController;
+    protected Transform m_Target;
+    protected PlayerController m_PlayerController;
 
     private AgentState m_State;
     private AgentState m_PreviousState;

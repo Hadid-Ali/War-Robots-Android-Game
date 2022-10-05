@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Gameplay.Weapons
 {
-    public class SimpleRifle : BaseWeapon
+    public class SimpleRifle : SimpleWeapon
     {
         [SerializeField] private WeaponVFXHandler m_WeaponVFXHandler;
 
