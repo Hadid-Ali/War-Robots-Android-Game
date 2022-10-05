@@ -12,9 +12,7 @@ namespace Gameplay.Weapons
         [SerializeField] private ParticleSystem[] m_WeaponParticles;
         [SerializeField] private float m_WeaponShootingRate = 0.2f;
         [SerializeField] private WeaponSFXHandler m_WeaponSfxHandler;
-        
-        
-        
+
         private int m_CurrentAmmoCount;
         private int m_CurrentCoolDownRemainingTime;
     
@@ -42,6 +40,11 @@ namespace Gameplay.Weapons
             m_Fire = true;
         }
 
+        public void SetWeaponShootingRate(float shootingRate)
+        {
+            m_WeaponShootingRate = shootingRate;
+        }
+
         public void OnFireUp()
         {
             m_Fire = false;
@@ -62,6 +65,11 @@ namespace Gameplay.Weapons
                 m_CurrentShotTime = m_WeaponShootingRate + Time.time;
                 FireInternal();
             }
+        }
+
+        public void Fire(Action action)
+        {
+            
         }
     
         protected virtual void FireInternal()

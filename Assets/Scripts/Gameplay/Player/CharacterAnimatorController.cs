@@ -15,6 +15,8 @@ public abstract class CharacterAnimatorController : MonoBehaviour
     private readonly int m_AimWeaponParamter = Animator.StringToHash("Aim");
     private readonly int m_ShootWeaponParameter = Animator.StringToHash("Shoot");
     private readonly int m_PunchingParameter = Animator.StringToHash("Punch");
+
+    private Action m_OnShootingPoseAction;
     
     public void ApplyAnimatorOverrideController(AnimatorOverrideController animatorOverrideController,Avatar avatar = null)
     {
@@ -59,8 +61,19 @@ public abstract class CharacterAnimatorController : MonoBehaviour
         m_Animator.SetBool(m_HasWeaponParameter,b);
     }
 
-    public void ShootPose()
+    public void ShootWeapon(Action onShoot)
     {
+        m_OnShootingPoseAction = onShoot;
         m_Animator.SetTrigger(m_ShootWeaponParameter);
     }
+
+    #region Animator Events
+
+    private void Shoot()
+    {
+        m_OnShootingPoseAction?.Invoke();
+        m_OnShootingPoseAction = null;
+    }
+    
+    #endregion
 }
