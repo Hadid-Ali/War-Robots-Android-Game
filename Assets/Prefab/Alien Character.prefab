@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 7902994953031435635}
   - component: {fileID: 7902994953031435636}
   m_Layer: 6
-  m_Name: Character4
+  m_Name: Alien Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1447,6 +1447,7 @@ MonoBehaviour:
   m_BotLook: {fileID: 4273134144849875145}
   m_BotTriggerController: {fileID: 4273134144849875184}
   m_Transform: {fileID: 7902994953618541234}
+  m_HealthController: {fileID: 7902994953031435636}
   m_EnemyWeapon: {fileID: 5012456524186629309}
   m_BotAttackRate: 1
 --- !u!114 &4273134144849875147

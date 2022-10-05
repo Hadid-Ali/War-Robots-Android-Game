@@ -2121,6 +2121,7 @@ MonoBehaviour:
   - {fileID: 2575735190504825693}
   m_WeaponShootingRate: 0.1
   m_WeaponSfxHandler: {fileID: 1949468012281668878}
+  m_WeaponDamage: 15
   m_WeaponVFXHandler: {fileID: 1569550012922796341}
 --- !u!114 &1569550012922796341
 MonoBehaviour:

@@ -15,6 +15,7 @@ public abstract class CharacterAnimatorController : MonoBehaviour
     private readonly int m_AimWeaponParamter = Animator.StringToHash("Aim");
     private readonly int m_ShootWeaponParameter = Animator.StringToHash("Shoot");
     private readonly int m_PunchingParameter = Animator.StringToHash("Punch");
+    private readonly int m_DamageParameter = Animator.StringToHash("GetDamage");
 
     private Action m_OnShootingPoseAction;
     
@@ -34,6 +35,11 @@ public abstract class CharacterAnimatorController : MonoBehaviour
     public void SetWalkPose()
     {
         SetSpeed(2f);
+    }
+
+    public void SetDamagePose()
+    {
+        m_Animator.SetTrigger(m_DamageParameter);
     }
 
     public void SetRunningPose()

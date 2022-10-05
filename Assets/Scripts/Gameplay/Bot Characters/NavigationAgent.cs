@@ -20,6 +20,7 @@ public class NavigationAgent : MonoBehaviour
     [SerializeField] protected BotLook m_BotLook;
     [SerializeField] private BotTriggerController m_BotTriggerController;
     [SerializeField] private Transform m_Transform;
+    [SerializeField] private HealthController m_HealthController;
     
     protected Transform m_Target;
     protected PlayerController m_PlayerController;
@@ -41,11 +42,27 @@ public class NavigationAgent : MonoBehaviour
         m_AnimatorController ??= GetComponent<BotAnimatorController>();
         m_BotLook ??= GetComponent<BotLook>();
         m_BotTriggerController ??= GetComponent<BotTriggerController>();
+        m_HealthController ??= GetComponent<HealthController>();
 
         m_BotTriggerController.Init(OnObjectEnterRange, OnObjectExitRange);
         m_Transform ??= transform;
+
+        if (m_HealthController is null)
+            return;
+
+        m_HealthController.Initialize(Die, null, GetDamage);
     }
 
+    protected virtual void GetDamage()
+    {
+        m_AnimatorController.SetDamagePose();
+    }
+
+    protected virtual void Die()
+    {
+        ChangeState(AgentState.Dead);
+    }
+    
     private void Update()
     {
         StatesEngine();
