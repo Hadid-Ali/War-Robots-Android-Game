@@ -2069,6 +2069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerArmature Mech1 Variant IM
       objectReference: {fileID: 0}
+    - target: {fileID: 3954100902641940429, guid: ab0bc873fe692aa40bcbb3bf5eef3818, type: 3}
+      propertyPath: m_AimingPointTransform
+      value: 
+      objectReference: {fileID: 474834783}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab0bc873fe692aa40bcbb3bf5eef3818, type: 3}
 --- !u!1001 &6099175427054736278
