@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2260554460605374759, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
+      propertyPath: m_ArmatureAimingComponent
+      value: 
+      objectReference: {fileID: 6228207166744727796}
     - target: {fileID: 2293605205669546676, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1099,6 +1103,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4392834879191804321, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
   m_PrefabInstance: {fileID: 1811428416453966308}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6228207166744727796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5714071663626545424, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
+  m_PrefabInstance: {fileID: 1811428416453966308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720044652909357337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e000ef0153db87643b22445d8a5a7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6947025733594166179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8740281353136360007, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}

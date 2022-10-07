@@ -1056,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &60811377953608858
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,8 +1111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerWeaponsManager: {fileID: 3954100902349660524}
   m_AimingComponent: {fileID: 3954100902349660525}
-  m_AnimatorController: {fileID: 0}
-  m_ArmatureAimingComponent: {fileID: 0}
+  m_ArmatureAimingComponent: {fileID: 3954100902641940429}
 --- !u!114 &3954100902641940429
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,8 +26,7 @@ public class WeaponAimingComponent : MonoBehaviour
 
     private AimObject m_CurrentAimObject;
     private PlayerController m_PlayerController;
-
-
+    
     private void Start()
     {
         m_PlayerController = GetComponent<PlayerController>();
@@ -39,6 +38,11 @@ public class WeaponAimingComponent : MonoBehaviour
             return;
 
         Aim();
+    }
+
+    public void RegisterCrosshair(Crosshair crosshair)
+    {
+        m_Crosshair = crosshair;
     }
 
     private void Aim()
