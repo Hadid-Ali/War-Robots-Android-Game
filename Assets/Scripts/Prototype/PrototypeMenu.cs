@@ -10,7 +10,7 @@ public class PrototypeMenu : MonoBehaviour
 
    private void Start()
    {
-       
+       ChangeCharacter(0);
    }
 
    public void ChangeCharacter(int index)

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Crosshair: {fileID: 5191985723089708935}
+  m_HealthBar: {fileID: 5191985724152325100}
 --- !u!114 &5818174590086898095
 MonoBehaviour:
   m_ObjectHideFlags: 0

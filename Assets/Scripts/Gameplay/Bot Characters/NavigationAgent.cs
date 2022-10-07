@@ -13,8 +13,6 @@ public enum AgentState
 
 public class NavigationAgent : MonoBehaviour
 {
-    [SerializeField] private float m_LookRange = 35f;
-
     [SerializeField] private NavigationAgentMovement m_NavigationAgentMovement;
     [SerializeField] protected BotAnimatorController m_AnimatorController;
     [SerializeField] protected BotLook m_BotLook;
@@ -33,6 +31,7 @@ public class NavigationAgent : MonoBehaviour
     private void Start()
     {
         Init();
+        
         m_AgentStateChange += OnStateChange;
     }
 
@@ -56,6 +55,7 @@ public class NavigationAgent : MonoBehaviour
     protected virtual void GetDamage()
     {
         m_AnimatorController.SetDamagePose();
+        m_BotTriggerController.ExtendLookRange();
     }
 
     protected virtual void Die()
@@ -103,6 +103,9 @@ public class NavigationAgent : MonoBehaviour
 
     private void ChangeState(AgentState agentState)
     {
+        if(m_State is AgentState.Dead)
+            return;
+        
         m_PreviousState = m_State;
         m_State = agentState;
         m_AgentStateChange?.Invoke(agentState);

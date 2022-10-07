@@ -10,7 +10,18 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private GameplayUIHandler m_GameplayUIHandler;
     [SerializeField] private CameraManager m_CameraManager;
 
-    public Action<Transform, Crosshair> OnPlayerSpawn;
+    private Transform m_GlobalBillBoardTarget;
+
+    public Transform GlobalBillBoardTarget
+    {
+        get
+        {
+            m_GlobalBillBoardTarget ??= GameplayCamera.transform;
+            return m_GlobalBillBoardTarget;
+        }
+    }
+    public Camera GameplayCamera => m_CameraManager.MainPlayerCamera;
+    public Action<Transform, Crosshair,Action<float>> OnPlayerSpawn;
 
     private void Awake()
     {
@@ -27,6 +38,7 @@ public class GameplayManager : MonoBehaviour
     public void SpawnPlayer(int index)
     {
         m_PlayerSpawner.SpawnPlayer(index);
-        OnPlayerSpawn(m_CameraManager.AimPoint, m_GameplayUIHandler.Crosshair);
+        OnPlayerSpawn(m_CameraManager.AimPoint, m_GameplayUIHandler.Crosshair,
+            m_GameplayUIHandler.HealthBar.UpdateHealthBar);
     }
 }

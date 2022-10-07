@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateHealthBar(float value)
     {
+        Debug.Log($"Value {value}");
         m_HealthBarImage.fillAmount = value;
     }
 }

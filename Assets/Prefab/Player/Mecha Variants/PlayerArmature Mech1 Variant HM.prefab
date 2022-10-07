@@ -204,6 +204,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2260554460605374759, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
+      propertyPath: m_PlayerHealthController
+      value: 
+      objectReference: {fileID: 9137568578817356113}
+    - target: {fileID: 2260554460605374759, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_ArmatureAimingComponent
       value: 
       objectReference: {fileID: 6228207166744727796}
@@ -857,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8214679217789047037, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8248511007085039160, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_Layer
@@ -1124,7 +1128,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8214679217789047037, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
   m_PrefabInstance: {fileID: 1811428416453966308}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2868478296605967039
+--- !u!114 &9137568578817356113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1133,7 +1137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7720044652909357337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc5b1a5a74b8314882f37c4cc20101d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dcaf08e34971da41a29c63e849549ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Health: 1000

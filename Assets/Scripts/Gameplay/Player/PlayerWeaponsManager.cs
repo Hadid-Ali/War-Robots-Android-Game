@@ -34,6 +34,7 @@ public class PlayerWeaponsManager : MonoBehaviour
       if(m_AimObject is null)
          return;
 
+      Debug.LogError($"Try Weapon Damage {damage}");
       if (m_AimObject.UnderAimObject.TryGetComponent(out HealthController healthController))
       {
          healthController.ApplyDamage(damage);

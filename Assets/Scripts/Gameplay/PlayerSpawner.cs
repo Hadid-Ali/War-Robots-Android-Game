@@ -12,7 +12,7 @@ public class PlayerSpawner : MonoBehaviour
     private PlayerController m_CurrentPlayer;
     public PlayerController CurrentPlayer => m_CurrentPlayer;
 
-    public void Initialize(ref Action<Transform, Crosshair> onPlayerAction)
+    public void Initialize(ref Action<Transform, Crosshair, Action<float>> onPlayerAction)
     {
         onPlayerAction += OnPlayerSpawned;
     }
@@ -32,8 +32,8 @@ public class PlayerSpawner : MonoBehaviour
         }
     }
 
-    public void OnPlayerSpawned(Transform aimPoint, Crosshair crosshair)
+    public void OnPlayerSpawned(Transform aimPoint, Crosshair crosshair, Action<float> healthBarEvent)
     {
-        m_CurrentPlayer.OnPlayerSpawn(aimPoint, crosshair);
+        m_CurrentPlayer.OnPlayerSpawn(aimPoint, crosshair, healthBarEvent);
     }
 }

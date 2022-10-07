@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 1109122030945170637}
   - component: {fileID: 7170869446623370806}
   - component: {fileID: 3731860870768961722}
+  - component: {fileID: 4277755948961673390}
   m_Layer: 8
   m_Name: PlayerArmature Mech1 Variant MM 1
   m_TagString: Player
@@ -794,6 +795,7 @@ MonoBehaviour:
   m_PlayerWeaponsManager: {fileID: 3614268729725803402}
   m_AimingComponent: {fileID: 3614268729725803403}
   m_ArmatureAimingComponent: {fileID: 3614268729900633387}
+  m_PlayerHealthController: {fileID: 4277755948961673390}
 --- !u!114 &3614268729900633387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,6 +943,19 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!114 &4277755948961673390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109122030945170630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcaf08e34971da41a29c63e849549ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Health: 1000
 --- !u!1 &1113806452922997049
 GameObject:
   m_ObjectHideFlags: 0
