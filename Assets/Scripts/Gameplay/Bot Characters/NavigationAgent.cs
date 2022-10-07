@@ -122,7 +122,16 @@ public class NavigationAgent : MonoBehaviour
             case AgentState.Attack:
                 OnSwitchToAttack();
                 break;
+            
+            case AgentState.Dead:
+                OnSwitchToDie();
+                break;
         }
+    }
+
+    protected virtual void OnSwitchToDie()
+    {
+        m_AnimatorController.DiePose();
     }
 
     protected virtual void OnSwitchToChase()

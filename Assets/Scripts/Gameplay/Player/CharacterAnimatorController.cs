@@ -14,7 +14,9 @@ public abstract class CharacterAnimatorController : MonoBehaviour
     private readonly int m_HasWeaponParameter = Animator.StringToHash("HasWeapon");
     private readonly int m_AimWeaponParamter = Animator.StringToHash("Aim");
     private readonly int m_ShootWeaponParameter = Animator.StringToHash("Shoot");
-    private readonly int m_PunchingParameter = Animator.StringToHash("Punch");
+    
+    private readonly int m_DeadParameter = Animator.StringToHash("Dead");
+    private readonly int m_DieParameter = Animator.StringToHash("Die");
     private readonly int m_DamageParameter = Animator.StringToHash("GetDamage");
 
     private Action m_OnShootingPoseAction;
@@ -46,10 +48,11 @@ public abstract class CharacterAnimatorController : MonoBehaviour
     {
         SetSpeed(6f);
     }
-    
-    public void Punch()
+
+    public void DiePose()
     {
-        m_Animator.SetTrigger(m_PunchingParameter);
+        m_Animator.SetTrigger(m_DieParameter);
+        m_Animator.SetBool(m_DeadParameter, true);
     }
 
     private void SetSpeed(float value)
