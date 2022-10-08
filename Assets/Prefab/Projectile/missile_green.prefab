@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Rigidbody: {fileID: 8948364193962700824}
-  m_ProjectileSpeed: 500
+  m_ProjectileSpeed: 1000
   m_Expolosion: {fileID: 5983677555660271254, guid: e13a4a3c0df0e1249a47e0fa0d7396f2, type: 3}
 --- !u!54 &8948364193962700824
 Rigidbody:

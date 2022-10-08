@@ -132,7 +132,8 @@ public class NavigationAgent : MonoBehaviour
     protected virtual void OnSwitchToDie()
     {
         m_AnimatorController.DiePose();
-        m_NavigationAgentMovement.StopMovement();
+        m_NavigationAgentMovement.StopMovement(true);
+        m_BotTriggerController.SeizeTracking();
     }
 
     protected virtual void OnSwitchToChase()

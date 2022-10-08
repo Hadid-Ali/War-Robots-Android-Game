@@ -72,7 +72,7 @@ public class NavigationAgentMovement : MonoBehaviour
             if (!IsTargetNearby)
                 return;
 
-            StopMovement();
+            StopMovement(false);
         }
         else
         {
@@ -88,14 +88,21 @@ public class NavigationAgentMovement : MonoBehaviour
         if (m_IsMoving)
             return;
 
+        m_IsMoving = true;
         SetMovingStatus(true);
         m_OnTargetChaseStart?.Invoke();
     }
 
-    public void StopMovement()
+    public void StopMovement(bool  seizeMovement)
     {
         SetMovingStatus(false);
         m_OnTargetReached?.Invoke();
+        m_IsMoving = false;
+        
+        if (seizeMovement)
+        {
+            m_TargetToFollow = null;
+        }
     }
 
     private void SetMovingStatus(bool isMoving)

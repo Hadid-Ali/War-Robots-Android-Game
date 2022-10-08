@@ -11,6 +11,20 @@ public class BotTriggerController : MonoBehaviour
    [SerializeField] private Action<string,GameObject> m_OnTriggerEnter;
    [SerializeField] private Action<string,GameObject> m_OnTriggerExit;
 
+   private bool m_CanTrack = true;
+
+   public void SeizeTracking()
+   {
+      m_CanTrack = false;
+      enabled = false;
+   }
+
+   private void OnDisable()
+   {
+      m_OnTriggerEnter = null;
+      m_OnTriggerExit = null;
+   }
+
    public void ExtendLookRange()
    {
       if (m_LookTrigger.radius >= m_ExtendedRange)
@@ -27,6 +41,9 @@ public class BotTriggerController : MonoBehaviour
    
    private void OnTriggerEnter(Collider other)
    {
+      if (!m_CanTrack)
+         return;
+      
       m_OnTriggerEnter?.Invoke(other.tag,other.gameObject);
    }
 

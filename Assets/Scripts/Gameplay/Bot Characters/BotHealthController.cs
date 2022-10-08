@@ -17,4 +17,10 @@ public class BotHealthController : HealthController
         m_HealthUpdate -= m_HealthBar.UpdateHealthBar;
         base.OnDisable();
     }
+
+    protected override void OnHealthDiminish()
+    {
+        base.OnHealthDiminish();
+        m_HealthBar.Hide();
+    }
 }
