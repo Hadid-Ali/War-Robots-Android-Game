@@ -51,7 +51,6 @@ public class WeaponAimingComponent : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit raycastHit, Mathf.Infinity,m_AimLayerMask))
         {
-            m_Crosshair.Focus();
             if (m_CurrentAimObject is null)
             {
                 m_CurrentAimObject = new AimObject(raycastHit.transform.gameObject, raycastHit.point);
@@ -60,6 +59,15 @@ public class WeaponAimingComponent : MonoBehaviour
             {
                 m_CurrentAimObject.UnderAimObject = raycastHit.transform.gameObject;
                 m_CurrentAimObject.UnderAimPosition = raycastHit.point;
+            }
+
+            if (m_CurrentAimObject.UnderAimObject.TryGetComponent(out HealthController healthController))
+            {
+                m_Crosshair.Focus();
+            }
+            else
+            {
+                m_Crosshair.UnFocus();
             }
         }
         else

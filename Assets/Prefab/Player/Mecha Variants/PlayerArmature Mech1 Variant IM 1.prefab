@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_CanAim: 1
   m_AimLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!114 &3954100902349660524
 MonoBehaviour:
   m_ObjectHideFlags: 0

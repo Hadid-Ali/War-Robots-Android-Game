@@ -1,16 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PrototypeMenu : MonoBehaviour
 {
    [SerializeField] private Image[] m_ButtonImages;
-
+   private static int m_CurrentCharacter = 0;
    private void Start()
    {
-       ChangeCharacter(0);
+       ChangeCharacter(m_CurrentCharacter);
    }
 
    public void ChangeCharacter(int index)
@@ -20,5 +18,11 @@ public class PrototypeMenu : MonoBehaviour
            m_ButtonImages[i].color = i == index ? Color.green : Color.white;
        }
        GameManager.Instance.GameplayManager.SpawnPlayer(index);
+   }
+
+   public void ChangeCharacterNewScene(int index)
+   {
+       m_CurrentCharacter = index;
+       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
    }
 }

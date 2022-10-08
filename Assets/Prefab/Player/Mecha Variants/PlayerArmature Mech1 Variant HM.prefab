@@ -557,7 +557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5714071663382478768, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_AimLayerMask.m_Bits
-      value: 64
+      value: 192
       objectReference: {fileID: 0}
     - target: {fileID: 5714071663626545424, guid: 684d4f86d85728542883b15dc1c52ca5, type: 3}
       propertyPath: m_AimingOffset.z

@@ -92,7 +92,7 @@ public class NavigationAgentMovement : MonoBehaviour
         m_OnTargetChaseStart?.Invoke();
     }
 
-    private void StopMovement()
+    public void StopMovement()
     {
         SetMovingStatus(false);
         m_OnTargetReached?.Invoke();
