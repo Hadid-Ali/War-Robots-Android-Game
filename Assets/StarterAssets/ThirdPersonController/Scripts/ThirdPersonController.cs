@@ -99,7 +99,7 @@ namespace StarterAssets
         private Animator _animator;
         private CharacterController _controller;
         private StarterAssetsInputs _input;
-        private GameObject _mainCamera;
+        [SerializeField] private GameObject _mainCamera;
 
         private const float _threshold = 0.01f;
 
@@ -125,8 +125,6 @@ namespace StarterAssets
 
         private void Start()
         {
-            _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
-            
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
@@ -144,13 +142,9 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            CentralizeToCamera();
         }
-
-        private void LateUpdate()
-        {
-            CameraRotation();
-        }
-
+        
         private void AssignAnimationIDs()
         {
             _animIDSpeed = Animator.StringToHash("Speed");
@@ -174,28 +168,7 @@ namespace StarterAssets
                 _animator.SetBool(_animIDGrounded, Grounded);
             }
         }
-
-        private void CameraRotation()
-        {
-            Vector2 lookInput = _input.LookInput;
-            // if there is an input and camera position is not fixed
-            if (lookInput.sqrMagnitude >= _threshold && !LockCameraPosition)
-            {
-                _cinemachineTargetYaw += lookInput.x * m_CameraSpeed  * Time.deltaTime;
-                _cinemachineTargetPitch += lookInput.y * m_CameraSpeed * Time.deltaTime;
-            }
-
-            // clamp our rotations so our values are limited 360 degrees
-            _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
-
-            Quaternion rotationToUse = Quaternion.Euler(-(_cinemachineTargetPitch + CameraAngleOverride),
-                _cinemachineTargetYaw, 0.0f);
-            
-            // Cinemachine will follow this target
-            CinemachineCameraTarget.rotation = rotationToUse;
-        }
-
+        
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
@@ -244,12 +217,10 @@ namespace StarterAssets
                                   _mainCamera.transform.eulerAngles.y;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity,
                     RotationSmoothTime);
-
+            
                 // rotate to face input direction relative to camera position
-                transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
             }
-
-
+            
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
             // move the player
@@ -264,6 +235,11 @@ namespace StarterAssets
             }
         }
 
+        private void CentralizeToCamera()
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0f, _mainCamera.transform.eulerAngles.y, 0f));
+        }
+        
         private void JumpAndGravity()
         {
             if (Grounded)

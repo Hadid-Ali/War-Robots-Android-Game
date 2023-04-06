@@ -71,22 +71,22 @@ namespace UI
     }
 
     [Serializable]
-    public class WidgetStatesWithScale : WidgetWithStatesAndTint
-    {
-        [SerializeField] private float m_NormalScale;
-        [SerializeField] private float m_FocusScale;
-        
-        public override void Focus()
+        public class WidgetStatesWithScale : WidgetWithStatesAndTint
         {
-            base.Focus();
-            SetScaleInternal(m_FocusScale);
-        }
+            [SerializeField] private float m_NormalScale;
+            [SerializeField] private float m_FocusScale;
+            
+            public override void Focus()
+            {
+                base.Focus();
+                SetScaleInternal(m_FocusScale);
+            }
 
-        public override void UnFocus()
-        {
-            base.UnFocus();
-            SetScaleInternal(m_NormalScale);
-        }
+            public override void UnFocus()
+            {
+                base.UnFocus();
+                SetScaleInternal(m_NormalScale);
+            }
 
         private void SetScaleInternal(float scale)
         {

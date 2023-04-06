@@ -4705,37 +4705,6 @@ Transform:
   m_Father: {fileID: 4954656368395794974}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4392834879191804326
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4392834879191804321}
-  m_Layer: 0
-  m_Name: PlayerCameraRoot
-  m_TagString: CinemachineTarget
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4392834879191804321
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4392834879191804326}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.375, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8740281353136360007}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4455402890779405733
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,7 +5305,7 @@ Transform:
   - {fileID: 1544562217611218108}
   - {fileID: 5717766826972064981}
   m_Father: {fileID: 8740281353136360007}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4867577794352293969
 GameObject:
@@ -7306,7 +7275,7 @@ Transform:
   m_Children:
   - {fileID: 5714071664089385300}
   m_Father: {fileID: 8740281353136360007}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8866446422089580230
 MonoBehaviour:
@@ -8273,7 +8242,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5244103780034867947}
-  - {fileID: 4392834879191804321}
   - {fileID: 9158889633649347255}
   - {fileID: 5244103778267531697}
   m_Father: {fileID: 0}
@@ -8313,8 +8281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerWeaponsManager: {fileID: 5714071663382478769}
   m_AimingComponent: {fileID: 5714071663382478768}
-  m_AnimatorController: {fileID: 0}
   m_ArmatureAimingComponent: {fileID: 0}
+  m_PlayerHealthController: {fileID: 0}
 --- !u!143 &8214679217789047031
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8373,7 +8341,7 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 513
-  CinemachineCameraTarget: {fileID: 4392834879191804321}
+  CinemachineCameraTarget: {fileID: 0}
   TopClamp: 70
   BottomClamp: -30
   CameraAngleOverride: 0

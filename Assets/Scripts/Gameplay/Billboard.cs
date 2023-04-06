@@ -15,7 +15,7 @@ public class Billboard : MonoBehaviour
 
    private void Update()
    {
-      if(GameManager.Instance.GameplayManager.GlobalBillBoardTarget is null)
+//      if(GameManager.Instance.GameplayManager.GlobalBillBoardTarget is null)
          return;
       
       m_Transform.LookAt(GameManager.Instance.GameplayManager.GlobalBillBoardTarget);

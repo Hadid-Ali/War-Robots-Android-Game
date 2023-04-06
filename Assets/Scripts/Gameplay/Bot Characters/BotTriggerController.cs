@@ -5,50 +5,50 @@ using UnityEngine;
 
 public class BotTriggerController : MonoBehaviour
 {
-   [SerializeField] private float m_ExtendedRange = 50f;
-   [SerializeField] private SphereCollider m_LookTrigger;
-   
-   [SerializeField] private Action<string,GameObject> m_OnTriggerEnter;
-   [SerializeField] private Action<string,GameObject> m_OnTriggerExit;
+    [SerializeField] private float m_ExtendedRange = 50f;
+    [SerializeField] private SphereCollider m_LookTrigger;
 
-   private bool m_CanTrack = true;
+    private Action<string, GameObject> m_OnTriggerEnter;
+    private Action<string, GameObject> m_OnTriggerExit;
 
-   public void SeizeTracking()
-   {
-      m_CanTrack = false;
-      enabled = false;
-   }
+    private bool m_CanTrack = true;
 
-   private void OnDisable()
-   {
-      m_OnTriggerEnter = null;
-      m_OnTriggerExit = null;
-   }
+    public void SeizeTracking()
+    {
+        m_CanTrack = false;
+        enabled = false;
+    }
 
-   public void ExtendLookRange()
-   {
-      if (m_LookTrigger.radius >= m_ExtendedRange)
-         return;
-      
-      m_LookTrigger.radius = m_ExtendedRange;
-   }
+    private void OnDisable()
+    {
+        m_OnTriggerEnter = null;
+        m_OnTriggerExit = null;
+    }
 
-   public void Init(Action<string, GameObject> onTriggerEnter, Action<string, GameObject> onTriggerExit)
-   {
-      m_OnTriggerEnter = onTriggerEnter;
-      m_OnTriggerExit = onTriggerExit;
-   }
-   
-   private void OnTriggerEnter(Collider other)
-   {
-      if (!m_CanTrack)
-         return;
-      
-      m_OnTriggerEnter?.Invoke(other.tag,other.gameObject);
-   }
+    public void ExtendLookRange()
+    {
+        if (m_LookTrigger.radius >= m_ExtendedRange)
+            return;
 
-   private void OnTriggerExit(Collider other)
-   {
-      m_OnTriggerExit?.Invoke(other.tag, other.gameObject);
-   }
+        m_LookTrigger.radius = m_ExtendedRange;
+    }
+
+    public void Init(Action<string, GameObject> onTriggerEnter, Action<string, GameObject> onTriggerExit)
+    {
+        m_OnTriggerEnter = onTriggerEnter;
+        m_OnTriggerExit = onTriggerExit;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!m_CanTrack)
+            return;
+
+        m_OnTriggerEnter?.Invoke(other.tag, other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        m_OnTriggerExit?.Invoke(other.tag, other.gameObject);
+    }
 }
